@@ -1,0 +1,26 @@
+@use '../utils' as *;
+
+#button{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    color: rgb(255, 255, 255);
+    background: #001c52;
+    z-index: 999;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    transform: scale(.7);
+    &.show{
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+}

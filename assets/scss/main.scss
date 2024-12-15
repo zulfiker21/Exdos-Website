@@ -1,0 +1,11 @@
+@forward 'utils';
+@forward 'theme';
+@forward 'component';
+@forward 'layout';
+
+.jumbotron {
+	background: hsla(0,0%,100%,.05);
+	padding: 2.5em;
+	margin: 2em auto;
+	min-height: 400px;
+}

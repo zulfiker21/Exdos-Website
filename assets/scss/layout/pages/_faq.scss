@@ -1,0 +1,114 @@
+@use '../../utils' as *;
+.tpfaq-wrapper{
+    padding: 20px 0;
+}
+.tp-accordion{
+    &-header{
+        margin: 0;
+    }
+    &-item{
+        border: 1px solid #57595c;
+        border-radius: 10px; 
+    }
+    &-button {
+        font-size: 20px;
+        width: 100%;
+        padding: 23px 30px;
+        text-align: left;
+        @include flexbox();
+        justify-content: space-between;
+        & span{
+            margin-left: 20px;
+            font-size: 16px;
+            color: #57595c;
+        }
+        &.collapsed{
+            & span{
+                @include transform(rotate(-90deg));
+            }
+        }
+    }
+    &-body {
+        margin: 0 30px;
+        border-top: 1px solid #57595c;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+}
+.tpfaq-bg {
+	height: 100%;
+	position: absolute;
+	left: 0;
+	width: calc(50% - 65px);
+	background-size: cover;
+    border-radius: 0 20px 20px 0;
+    top: 0;
+    @media #{$md,$xs}{
+        width: 100%;
+        height: 500px;
+        position: static;
+        border-radius: 0;
+        margin-bottom: 30px;
+    }
+    @media #{$xs}{
+        height: 300px;
+    }
+    &-right{
+        left: auto;
+        right: 0;
+        border-radius: 0;
+        background-position: center;
+    }
+}
+
+.tp-faq{
+    &-button {
+        text-align: left;
+        font-size: 24px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid transparent;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        display: block;
+        width: 100%;
+        &:after{
+            content: "-";
+        }
+        &.collapsed{
+            border-bottom: 1px solid #D9D9D9;
+            margin-bottom: 20px;
+            &:after{
+                content: "+";
+            }
+        }
+        
+    }
+    &-thumb{
+        @media #{$lg,$md,$xs}{
+           margin-left: 0;
+        }
+        & img{
+            max-width: inherit;
+            @media #{$md,$xs}{
+                max-width: 100%;
+             }
+        }
+    }
+}
+.tp-faq-body{
+    border-bottom: 1px solid transparent;
+}
+
+.show .tp-faq-body{
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.tp-faq-header {
+	margin: 0;
+}
+.tp-faq-item.mb-20 {
+	margin: 0;
+}
+.tp-faq-body {
+	margin-bottom: 22px;
+}
